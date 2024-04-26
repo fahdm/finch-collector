@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Cage List</h1>
+
+{% for cage in cage_list %}
+  <a href="{% url 'cages_detail' cage.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ cage.name }}</span>
+            <p>Color: {{ cage.color }}</p>
+            <p>Size: {{ cage.size }}</p>
+            <p>Material: {{ cage.material }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
